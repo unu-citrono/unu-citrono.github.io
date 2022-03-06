@@ -13,7 +13,7 @@ jobs:
     # 下载仓库代码
     - uses: actions/checkout@v2
       with:
-      submodules: recursive
+        submodules: recursive
     
     # 缓存依赖
     - name: Cache dependencies
