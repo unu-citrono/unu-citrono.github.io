@@ -11,6 +11,11 @@
   
   <title>
     
+      CSS水平垂直居中 
+      
+      
+      |
+    
      Aether
   </title>
 
@@ -128,17 +133,73 @@ MathJax = {
   <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
   <div class="container post-details" id="post-details">
     <div class="post-content">
-      <div class="post-title"></div>
+      <div class="post-title">CSS水平垂直居中</div>
       <div class="post-attach">
         <span class="post-pubtime">
           <i class="iconfont icon-updatetime" title="Update time"></i>
-          2022-03-14 07:36:02
+          2022-03-21 00:00:00
         </span>
         
       </div>
       <div class="markdown-body">
-        <h3 id="为什么使用this"><a href="#为什么使用this" class="headerlink" title="为什么使用this"></a>为什么使用this</h3><p>隐式地、优雅的传参</p>
-<h3 id="关于this的两个误解"><a href="#关于this的两个误解" class="headerlink" title="关于this的两个误解"></a>关于this的两个误解</h3>
+        <p><em><strong>[注]：不建议使用table进行居中，不利于HTML语义化</strong></em></p>
+<p>​        <em><strong>position + transform平移效果 &#x3D; position + margin（宽高已知）</strong></em></p>
+<h3 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h3><ul>
+<li><p>定宽元素</p>
+<p>margin： 0 auto;</p>
+</li>
+<li><p>不定宽元素</p>
+<ol>
+<li><p>flex布局：父元素设置</p>
+<p><code>&#123; display: flex; justify-content: center; &#125;</code></p>
+</li>
+<li><p>设置居中元素display为table</p>
+<p><code>&#123; display: table; margin: 0 auto; &#125;</code></p>
+</li>
+<li><p>多个元素共同居中</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 子元素</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr">display</span>: inline-block;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 父元素</span></span><br><span class="line">&#123;</span><br><span class="line">    text-<span class="attr">align</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+<li><p>position</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 父元素</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 子元素</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr">position</span>: absolute;</span><br><span class="line">    <span class="attr">left</span>: <span class="number">50</span>%;</span><br><span class="line">    <span class="attr">transform</span>: <span class="title function_">translate</span>(-<span class="number">50</span>%); <span class="comment">// 宽度未知时，已知可使用margin</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h3><ul>
+<li><p>单个元素 ，父元素：</p>
+<ol>
+<li><p>定高且为文本：<code>line-height</code> 为 自身高度</p>
+<ol start="2">
+<li>不定高：设置padding相同的top和bottom</li>
+<li>position（同水平居中思路）</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>多个元素：</p>
+<ol>
+<li><p>flex布局</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 父元素</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr">display</span>: flex;</span><br><span class="line">    align-<span class="attr">items</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>display：table</p>
+</li>
+</ol>
+<p><img src="C:\Users\MI\AppData\Roaming\Typora\typora-user-images\image-20220320171748437.png" alt="image-20220320171748437"></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;parent&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>12345678<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>12345678<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>12345678<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.<span class="property">parent</span> &#123;</span><br><span class="line">    <span class="attr">display</span>: table;</span><br><span class="line">&#125;</span><br><span class="line">.<span class="property">container</span> &#123;</span><br><span class="line">    <span class="attr">display</span>: table-cell;</span><br><span class="line">    vertical-<span class="attr">align</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="水平垂直居中"><a href="#水平垂直居中" class="headerlink" title="水平垂直居中"></a>水平垂直居中</h3><ul>
+<li><p>flex布局</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 父元素</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr">display</span>: flex;</span><br><span class="line">    justify-<span class="attr">content</span>: center;</span><br><span class="line">    align-<span class="attr">items</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>position</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 父元素</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 子元素</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr">top</span>: <span class="number">50</span>%;</span><br><span class="line">    <span class="attr">left</span>: <span class="number">50</span>%;</span><br><span class="line">    <span class="attr">transform</span>: <span class="title function_">translate</span>(-<span class="number">50</span>%, -<span class="number">50</span>%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>display: table</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 父元素</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr">display</span>: table;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 子元素</span></span><br><span class="line">&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="attr">display</span>:table-cell;</span><br><span class="line">    text-<span class="attr">align</span>:center;</span><br><span class="line">    vertical-<span class="attr">align</span>: middle;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+
       </div>
       
         <div class="prev-or-next">
@@ -153,7 +214,7 @@ MathJax = {
           <div class="post-attach">
             <span class="post-pubtime">
               <i class="iconfont icon-updatetime" title="Update time"></i>
-              2022-03-14 07:36:02
+              2022-03-21 00:00:00
             </span>
             
           </div>
@@ -170,7 +231,7 @@ MathJax = {
   <div class="post-catalog hidden" id="catalog">
     <div class="title">Contents</div>
     <div class="catalog-content">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8this"><span class="toc-text">为什么使用this</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E4%BA%8Ethis%E7%9A%84%E4%B8%A4%E4%B8%AA%E8%AF%AF%E8%A7%A3"><span class="toc-text">关于this的两个误解</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD"><span class="toc-text">水平居中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD"><span class="toc-text">垂直居中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD"><span class="toc-text">水平垂直居中</span></a></li></ol>
     </div>
   </div>
 
@@ -487,12 +548,12 @@ MathJax = {
       </a>
       <div class="share-content hidden">
         
-          <a class="share-item" href="https://twitter.com/intent/tweet?text=' +  + '&url=' + http%3A%2F%2Fexample.com%2F2022%2F03%2F14%2F%25E5%2585%25B3%25E4%25BA%258Ethis%2F + '" target="_blank" title="Twitter">
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + CSS%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD + '&url=' + http%3A%2F%2Fexample.com%2F2022%2F03%2F21%2FCSS%25E6%25B0%25B4%25E5%25B9%25B3%25E5%259E%2582%25E7%259B%25B4%25E5%25B1%2585%25E4%25B8%25AD%2F + '" target="_blank" title="Twitter">
             <i class="iconfont icon-twitter"></i>
           </a>
         
         
-          <a class="share-item" href="https://www.facebook.com/sharer.php?u=http://example.com/2022/03/14/%E5%85%B3%E4%BA%8Ethis/" target="_blank" title="Facebook">
+          <a class="share-item" href="https://www.facebook.com/sharer.php?u=http://example.com/2022/03/21/CSS%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/" target="_blank" title="Facebook">
             <i class="iconfont icon-facebooksquare"></i>
           </a>
         
