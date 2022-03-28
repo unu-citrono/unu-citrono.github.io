@@ -11,11 +11,6 @@
   
   <title>
     
-      CSS水平垂直居中 
-      
-      
-      |
-    
      Aether
   </title>
 
@@ -133,71 +128,28 @@ MathJax = {
   <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
   <div class="container post-details" id="post-details">
     <div class="post-content">
-      <div class="post-title">CSS水平垂直居中</div>
+      <div class="post-title"></div>
       <div class="post-attach">
         <span class="post-pubtime">
           <i class="iconfont icon-updatetime" title="Update time"></i>
-          2022-03-21 00:00:00
+          2022-03-28 08:35:59
         </span>
         
       </div>
       <div class="markdown-body">
-        <p><em><strong>[注]：不建议使用table进行居中，不利于HTML语义化</strong></em></p>
-<p>​        <em><strong>position + transform平移效果 &#x3D; position + margin（宽高已知）</strong></em></p>
-<h3 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h3><ul>
-<li><p>定宽元素</p>
-<p>margin： 0 auto;</p>
-</li>
-<li><p>不定宽元素</p>
-<ol>
-<li><p>flex布局：父元素设置</p>
-<p><code>&#123; display: flex; justify-content: center; &#125;</code></p>
-</li>
-<li><p>设置居中元素display为table</p>
-<p><code>&#123; display: table; margin: 0 auto; &#125;</code></p>
-</li>
-<li><p>多个元素共同居中</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 子元素</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr">display</span>: inline-block;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 父元素</span></span><br><span class="line">&#123;</span><br><span class="line">    text-<span class="attr">align</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
-</li>
-<li><p>position</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 父元素</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 子元素</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr">position</span>: absolute;</span><br><span class="line">    <span class="attr">left</span>: <span class="number">50</span>%;</span><br><span class="line">    <span class="attr">transform</span>: <span class="title function_">translate</span>(-<span class="number">50</span>%); <span class="comment">// 宽度未知时，已知可使用margin</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h3><ul>
-<li><p>单个元素 ，父元素：</p>
-<ol>
-<li><p>定高且为文本：<code>line-height</code> 为 自身高度</p>
-<ol start="2">
-<li>不定高：设置padding相同的top和bottom</li>
-<li>position（同水平居中思路）</li>
-</ol>
-</li>
-</ol>
-</li>
-<li><p>多个元素：</p>
-<ol>
-<li><p>flex布局</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 父元素</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr">display</span>: flex;</span><br><span class="line">    align-<span class="attr">items</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>display：table</p>
-</li>
-</ol>
-<p><img src="C:\Users\MI\AppData\Roaming\Typora\typora-user-images\image-20220320171748437.png" alt="image-20220320171748437"></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;parent&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>12345678<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>12345678<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>12345678<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+        <h3 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">&lt;!<span class="variable constant_">DOCTYPE</span> html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">  &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</span><br><span class="line">  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">  &lt;title&gt;图片懒加载&lt;/title&gt;</span><br><span class="line">  &lt;style&gt;</span><br><span class="line">    .box &#123;</span><br><span class="line">      width: 800px;</span><br><span class="line">      height: 800px;</span><br><span class="line">      border: 1px solid;</span><br><span class="line">      overflow: auto;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    .img &#123;</span><br><span class="line">      width: 200px;</span><br><span class="line">      height: 200px;</span><br><span class="line">      border: 1px solid;</span><br><span class="line">      display: block;</span><br><span class="line">      margin: 40px auto;</span><br><span class="line">    &#125;</span><br><span class="line">  &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div class=&quot;box&quot;&gt;</span><br><span class="line">    &lt;img class=&quot;img&quot; src=&quot;https://picsum.photos/200/200&quot; alt=&quot;1&quot;&gt;</span><br><span class="line">    &lt;img class=&quot;img&quot; src=&quot;https://picsum.photos/200/200&quot; alt=&quot;2&quot;&gt;</span><br><span class="line">    &lt;img class=&quot;img&quot; src=&quot;https://picsum.photos/200/200&quot; alt=&quot;3&quot;&gt;</span><br><span class="line">    &lt;img class=&quot;img&quot; src=&quot;https://picsum.photos/200/200&quot; alt=&quot;4&quot;&gt;</span><br><span class="line">    &lt;img class=&quot;img&quot; src=&quot;&quot; data-src=&quot;https://picsum.photos/200/200&quot; alt=&quot;5&quot;&gt;</span><br><span class="line">    &lt;img class=&quot;img&quot; src=&quot;&quot; data-src=&quot;https://picsum.photos/200/200&quot; alt=&quot;6&quot;&gt;</span><br><span class="line">    &lt;img class=&quot;img&quot; src=&quot;&quot; data-src=&quot;https://picsum.photos/200/200&quot; alt=&quot;7&quot;&gt;</span><br><span class="line">    &lt;img class=&quot;img&quot; src=&quot;&quot; data-src=&quot;https://picsum.photos/200/200&quot; alt=&quot;8&quot;&gt;</span><br><span class="line">    &lt;img class=&quot;img&quot; src=&quot;&quot; data-src=&quot;https://picsum.photos/200/200&quot; alt=&quot;9&quot;&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  var box = document.getElementsByClassName(&#x27;box&#x27;)[0];</span><br><span class="line">  var imgs = document.getElementsByClassName(&#x27;img&#x27;);</span><br><span class="line">  box.onscroll = throttle(handleScorllChange);</span><br><span class="line">  </span><br><span class="line">  // 节流函数</span><br><span class="line">  function throttle (fn, delay=500) &#123;</span><br><span class="line">      let oldTime = Date.now();</span><br><span class="line">      return function (...args) &#123;</span><br><span class="line">        	let newTime = Date.now();</span><br><span class="line">        	if (newTime - oldTime &gt;= delay) &#123;</span><br><span class="line">          	fn.apply(null, args);</span><br><span class="line">  	        oldTime = Date.now();</span><br><span class="line">      	&#125;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  function handleScorllChange () &#123;</span><br><span class="line">    let boxHeight = box.clientHeight;</span><br><span class="line">    let scrollTop = box.scrollTop;</span><br><span class="line">    for (let i = 0; i &lt; imgs.length; i++)&#123;</span><br><span class="line">      if (imgs[i].offsetTop - 100 &lt; boxHeight + scrollTop &amp;&amp; 					imgs[i].getAttribute(&#x27;data-src&#x27;)) &#123;</span><br><span class="line">        imgs[i].src = imgs[i].getAttribute(&#x27;data-src&#x27;)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.<span class="property">parent</span> &#123;</span><br><span class="line">    <span class="attr">display</span>: table;</span><br><span class="line">&#125;</span><br><span class="line">.<span class="property">container</span> &#123;</span><br><span class="line">    <span class="attr">display</span>: table-cell;</span><br><span class="line">    vertical-<span class="attr">align</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="水平垂直居中"><a href="#水平垂直居中" class="headerlink" title="水平垂直居中"></a>水平垂直居中</h3><ul>
-<li><p>flex布局</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 父元素</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr">display</span>: flex;</span><br><span class="line">    justify-<span class="attr">content</span>: center;</span><br><span class="line">    align-<span class="attr">items</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
+<h3 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h3><p><strong>监听图片容器元素的滚动事件，通过每张图片的offsetTop（距离父元素顶部的距离）判断图片是否即将显示，即将显示时给src赋值。</strong></p>
+<ul>
+<li><p>html部分</p>
+<p>通过picsum.photos生成图片，初次加载时显示的图片直接设置src</p>
 </li>
-<li><p>position</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 父元素</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 子元素</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr">top</span>: <span class="number">50</span>%;</span><br><span class="line">    <span class="attr">left</span>: <span class="number">50</span>%;</span><br><span class="line">    <span class="attr">transform</span>: <span class="title function_">translate</span>(-<span class="number">50</span>%, -<span class="number">50</span>%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>display: table</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 父元素</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr">display</span>: table;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 子元素</span></span><br><span class="line">&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="attr">display</span>:table-cell;</span><br><span class="line">    text-<span class="attr">align</span>:center;</span><br><span class="line">    vertical-<span class="attr">align</span>: middle;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>js部分</p>
+<p>图片容器元素添加滚动监听事件，会高频触发影响浏览器性能，故使用节流算法，节流请看<a target="_blank" rel="noopener" href="http://yunjiao.wang/2022/03/13/%E8%8A%82%E6%B5%81%E4%B8%8E%E9%98%B2%E6%8A%96/">节流与防抖</a>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> box = <span class="variable language_">document</span>.<span class="title function_">getElementsByClassName</span>(<span class="string">&#x27;box&#x27;</span>)[<span class="number">0</span>];</span><br><span class="line"><span class="keyword">var</span> imgs = <span class="variable language_">document</span>.<span class="title function_">getElementsByClassName</span>(<span class="string">&#x27;img&#x27;</span>);</span><br><span class="line">box.<span class="property">onscroll</span> = <span class="title function_">throttle</span>(handleScorllChange);</span><br></pre></td></tr></table></figure>
+
+<p>监听事件：循环图片元素，判断图片元素是否“ 即将出现 ”，即 图片距父元素顶部的距离 &lt; 容器高度 + 已经滚过的距离，这里“ -100 ”是为了预留足够的加载时间使图片再提前一些加载。     </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">handleScorllChange</span> () &#123;</span><br><span class="line">    <span class="keyword">let</span> boxHeight = box.<span class="property">clientHeight</span>;</span><br><span class="line">    <span class="keyword">let</span> scrollTop = box.<span class="property">scrollTop</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; imgs.<span class="property">length</span>; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span> (imgs[i].<span class="property">offsetTop</span> - <span class="number">100</span> &lt; boxHeight + scrollTop &amp;&amp; 					imgs[i].<span class="title function_">getAttribute</span>(<span class="string">&#x27;data-src&#x27;</span>)) &#123;</span><br><span class="line">            imgs[i].<span class="property">src</span> = imgs[i].<span class="title function_">getAttribute</span>(<span class="string">&#x27;data-src&#x27;</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
 
       </div>
@@ -205,7 +157,7 @@ MathJax = {
         <div class="prev-or-next">
           <div class="post-foot-next">
             
-              <a href="/2022/03/13/%E8%8A%82%E6%B5%81%E4%B8%8E%E9%98%B2%E6%8A%96/" target="_self">
+              <a href="/2022/03/21/CSS%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/" target="_self">
                 <i class="iconfont icon-chevronleft"></i>
                 <span>Prev</span>
               </a>
@@ -214,16 +166,11 @@ MathJax = {
           <div class="post-attach">
             <span class="post-pubtime">
               <i class="iconfont icon-updatetime" title="Update time"></i>
-              2022-03-21 00:00:00
+              2022-03-28 08:35:59
             </span>
             
           </div>
           <div class="post-foot-prev">
-            
-              <a href="/2022/03/28/%E5%9B%BE%E7%89%87%E6%87%92%E5%8A%A0%E8%BD%BD/" target="_self">
-                <span>Next</span>
-                <i class="iconfont icon-chevronright"></i>
-              </a>
             
           </div>
         </div>
@@ -236,7 +183,7 @@ MathJax = {
   <div class="post-catalog hidden" id="catalog">
     <div class="title">Contents</div>
     <div class="catalog-content">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD"><span class="toc-text">水平居中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD"><span class="toc-text">垂直居中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD"><span class="toc-text">水平垂直居中</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BA%90%E7%A0%81"><span class="toc-text">源码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90"><span class="toc-text">解析</span></a></li></ol>
     </div>
   </div>
 
@@ -553,12 +500,12 @@ MathJax = {
       </a>
       <div class="share-content hidden">
         
-          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + CSS%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD + '&url=' + http%3A%2F%2Fexample.com%2F2022%2F03%2F21%2FCSS%25E6%25B0%25B4%25E5%25B9%25B3%25E5%259E%2582%25E7%259B%25B4%25E5%25B1%2585%25E4%25B8%25AD%2F + '" target="_blank" title="Twitter">
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' +  + '&url=' + http%3A%2F%2Fexample.com%2F2022%2F03%2F28%2F%25E5%259B%25BE%25E7%2589%2587%25E6%2587%2592%25E5%258A%25A0%25E8%25BD%25BD%2F + '" target="_blank" title="Twitter">
             <i class="iconfont icon-twitter"></i>
           </a>
         
         
-          <a class="share-item" href="https://www.facebook.com/sharer.php?u=http://example.com/2022/03/21/CSS%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/" target="_blank" title="Facebook">
+          <a class="share-item" href="https://www.facebook.com/sharer.php?u=http://example.com/2022/03/28/%E5%9B%BE%E7%89%87%E6%87%92%E5%8A%A0%E8%BD%BD/" target="_blank" title="Facebook">
             <i class="iconfont icon-facebooksquare"></i>
           </a>
         
